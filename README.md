@@ -86,7 +86,39 @@ Verify you version
 ```
 rails -v
 ```
+
+Install the following package 
+
 ```
+gem install bundler
 gem install calabash-android
 ```
+
+Create a folder, and then create a file with the following title `Gemfile`, it will contain the follogin lines
+
+```
+# Contents of Gemfile
+source "https://rubygems.org"
+
+gem 'calabash-android' # Android 
+gem 'cucumber' # IOS
+```
+
+Inside the folder run the following command 
+
+```
+calabash-android gen
+
+```
+
+Then run the following line in order to download all the modules riquired for the project 
+
+```
+bundle install
+
+```
+
+
+
+
 
