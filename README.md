@@ -55,13 +55,34 @@ Install the ruby version that you want
 ```
 rbenv install 2.6.2
 ```
+Environment configuration
 
-Finally tell the system the version you want to use by defutl, replace the x with you version 
+Add the following line in your `.bash_profile` file 
+
+```
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+```
+
+Finally tell the system the version you want to use by default, replace the x with you version 
 
 ```
 rbenv global 2.6.2
 ```
 
+Rails installation 
 
+```
+gem install rails -v 5.2.2
+```
 
+Run the following command 
 
+```
+rbenv rehash
+```
+Verify you version 
+
+```
+rails -v
+```
