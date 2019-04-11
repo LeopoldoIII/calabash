@@ -86,3 +86,7 @@ Verify you version
 ```
 rails -v
 ```
+```
+gem install calabash-android
+```
+
