@@ -9,7 +9,7 @@ untar and place the ant folder wherever you want
 
 ```
 
-### Environment setup
+###### Environment setup
 
 
 Edit file bash_profile `/Users/user/.bash_profile`
@@ -50,11 +50,20 @@ init
 ```
 rbenv init
 ```
-Install the ruby version that you want 
+List the version available 
+
+```
+rbenv install --list
+
+```
+
+Install the ruby version that you want with the followgin command, 
 
 ```
 rbenv install 2.6.2
 ```
+Any version is installed into the `~/.rbenv` directory. You can later specify which installed version you want to use in your project. 
+
 Environment configuration
 
 Add the following line in your `.bash_profile` file 
@@ -70,7 +79,7 @@ Finally tell the system the version you want to use by default, replace the x wi
 rbenv global 2.6.2
 ```
 
-Rails installation 
+###### Rails installation(optional) 
 
 ```
 gem install rails -v 5.2.2
@@ -86,6 +95,7 @@ Verify you version
 ```
 rails -v
 ```
+## Calabash setup
 
 Install the following package 
 
@@ -117,8 +127,3 @@ Then run the following line in order to download all the modules riquired for th
 bundle install
 
 ```
-
-
-
-
-
