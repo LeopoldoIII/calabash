@@ -1,6 +1,6 @@
-###Calabash Setup environment  
+# Calabash environment Setup   
 
-**Ant installation and configuration 
+## Ant installation and configuration(Optional) 
 
 Download from (https://ant.apache.org/)
 
@@ -9,7 +9,7 @@ untar and place the ant folder wherever you want
 
 ```
 
-**Environment setup**
+### Environment setup
 
 
 Edit file bash_profile `/Users/user/.bash_profile`
@@ -31,7 +31,7 @@ export PATH=${PATH}:${JAVA_HOME}/bin:${ANT_HOME}/bin
 
 ```
 
-**Ruby installation 
+## Ruby installation 
 
 Install HombreBrew
 
