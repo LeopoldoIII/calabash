@@ -114,6 +114,12 @@ gem 'calabash-android' # Android
 gem 'cucumber' # IOS
 ```
 
+To list gem installed 
+
+```
+gem list --local 
+```
+
 Inside the folder run the following command 
 
 ```
@@ -127,3 +133,50 @@ Then run the following line in order to download all the modules riquired for th
 bundle install
 
 ```
+
+## Generate a cucumber structure 
+
+```
+cucumber --init
+```
+
+Create a feature file XXX.feature, as an example 
+
+```
+Feature: Verify Login Functionality
+ Scenario: Login with valid credentials
+  Given User is on login page
+  When User enter username 
+  And User enter password
+  And User click on singin button 
+  Then User logged in succesfully  
+```
+
+After tu write your first file XXX.feature, go to your root path project, once you are in the root run the following command 
+
+
+```
+cucumber >features/step_definitions/StepFile.rb
+```
+
+This will create a `StepFile.rb` inside step_definitions folder, so at this time you will have the followin structure 
+
+```
+
+└── calabashTest
+    └── features
+        ├── LoginTest.feature
+        ├── step_definitions
+        │   └── StepFile.rb
+        └── support
+            └── env.rb
+
+```
+
+
+
+
+
+
+
+
