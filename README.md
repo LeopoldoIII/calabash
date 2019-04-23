@@ -206,6 +206,18 @@ calabash-ios console
 
 
 
+### Calabash commans 
+
+
+````
+tree
+````
+
+````
+query("view", :description)
+
+````
+
 
 
 
