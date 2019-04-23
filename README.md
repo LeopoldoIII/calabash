@@ -31,7 +31,7 @@ export PATH=${PATH}:${JAVA_HOME}/bin:${ANT_HOME}/bin
 
 ```
 
-## Ruby installation 
+## Ruby installation HombreBrew 
 
 Install HombreBrew
 
@@ -79,7 +79,7 @@ Finally tell the system the version you want to use by default, replace the x wi
 rbenv global 2.6.2
 ```
 
-###### Rails installation(optional) 
+##### Rails installation(optional) 
 
 ```
 gem install rails -v 5.2.2
@@ -172,6 +172,39 @@ This will create a `StepFile.rb` inside step_definitions folder, so at this time
             └── env.rb
 
 ```
+
+
+## IOS setup 
+
+In order to automate with IOS you have to performe the following lines 
+
+Create a Ios.cert and install in your machine, verify whit the following command
+
+````
+  xcrun security find-identity -v -p codesigning
+````
+
+
+Add the following variables (you can retrive those values from the xcode BUNDLE_ID DEVICE_TARGET) 
+
+
+````
+export BUNDLE_ID=com.xxx.xxxxx.xxxxxxxx
+export DEVICE_ENDPOINT=IP_DEVICE
+export DEVICE_TARGET=Target_Device
+export CODE_SIGN_IDENTITY="iPhone Developer: your_Name (ID_XXXXX)" \
+````
+
+
+gem install bundler -v 1.16.1
+gem install calabash-cucumber  -v 0.21.8
+
+gem 'calabash-cucumber', '~> 0.21.8'
+
+calabash-ios console
+
+
+
 
 
 
