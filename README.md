@@ -79,9 +79,43 @@ Finally tell the system the version you want to use by default, replace the x wi
 rbenv global 2.6.2
 ```
 
-## Ruby installation RVM 
+## Ruby installation RVM method 
 
-https://rvm.io/rvm/install
+Install `gpg2` and `curl`
+
+````
+brew install gpg2
+
+brew install curl 
+
+````
+
+Optional 
+
+````
+If you need to have curl first in your PATH run:
+  echo 'export PATH="/usr/local/opt/curl/bin:$PATH"' >> ~/.bash_profile
+
+For compilers to find curl you may need to set:
+  export LDFLAGS="-L/usr/local/opt/curl/lib"
+  export CPPFLAGS="-I/usr/local/opt/curl/include"
+`````
+
+
+Execute the following steps source (https://rvm.io/rvm/install)
+
+`````
+gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+
+`````
+
+Install RVM stable  
+
+`````
+\curl -sSL https://get.rvm.io | bash -s stable
+
+````
+
 
 
 
@@ -101,6 +135,9 @@ Verify you version
 ```
 rails -v
 ```
+
+
+
 ## Calabash setup
 
 Install the following package 
@@ -210,8 +247,6 @@ gem 'calabash-cucumber', '~> 0.21.8'
 calabash-ios console
 
 
-
-
 ### Calabash commans 
 
 
@@ -223,3 +258,8 @@ tree
 query("view", :description)
 
 ````
+
+# Install Bash git completion 
+https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion
+
+
