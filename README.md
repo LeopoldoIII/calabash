@@ -79,6 +79,12 @@ Finally tell the system the version you want to use by default, replace the x wi
 rbenv global 2.6.2
 ```
 
+## Ruby installation RVM 
+
+https://rvm.io/rvm/install
+
+
+
 ##### Rails installation(optional) 
 
 ```
@@ -217,11 +223,3 @@ tree
 query("view", :description)
 
 ````
-
-
-
-
-
-
-
-
