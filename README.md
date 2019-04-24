@@ -36,7 +36,7 @@ export PATH=${PATH}:${JAVA_HOME}/bin:${ANT_HOME}/bin
 Install HombreBrew
 
 ```
-Brew installation line 
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 Install rbenv
