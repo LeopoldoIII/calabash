@@ -1,37 +1,131 @@
 # Calabash environment Setup   
 
-## Ant installation and configuration(Optional) 
-
-Download from (https://ant.apache.org/)
-
-```
-untar and place the ant folder wherever you want 
-
-```
-
-###### Environment setup
 
 
-Edit file bash_profile `/Users/user/.bash_profile`
+## Ruby installation RVM method 
+#
+
+Install `gpg2` and `curl`
 
 ```
-vi /Users/user/.bash_profile
+brew install gpg2
+
+brew install curl 
 
 ```
 
-Add the following line in your `.bash_profile` file 
+Execute the following steps 
 
 ```
-#### ANT_HOME #########
-
-export ANT_HOME=/Users/mkyong/apache-ant-1.9.4
-
-export PATH=${PATH}:${JAVA_HOME}/bin:${ANT_HOME}/bin
-
+gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 
 ```
 
-## Ruby installation HombreBrew 
+Install RVM stable  
+
+```
+\curl -sSL https://get.rvm.io | bash -s stable
+
+```
+
+(https://rvm.io/rvm/install)
+
+
+Optional 
+
+```
+If you need to have curl first in your PATH run:
+  echo 'export PATH="/usr/local/opt/curl/bin:$PATH"' >> ~/.bash_profile
+
+For compilers to find curl you may need to set:
+  export LDFLAGS="-L/usr/local/opt/curl/lib"
+  export CPPFLAGS="-I/usr/local/opt/curl/include"
+```
+
+#### Execute the following steps to install a ruby version 
+#
+
+Execute the following lines 
+
+```
+rvm install 2.6.0
+```
+
+Then `rvm list` just to verify, it will return something like 
+
+
+```
+   ruby-2.5.2 [ x86_64 ]
+=* ruby-2.6.0 [ x86_64 ]
+
+# => - current
+# =* - current && default
+#  * - default
+
+```
+
+Bundler installation, (Bundler is an exit from dependency hell, and ensures that the gems you need are present )
+
+```
+gem install bundler
+```
+
+## IOS setup 
+#
+
+In order to automate with IOS you have to performe the following steps 
+
+Create a Ios.cert and install in your machine, whit the following command verify if you have a valid certification 
+
+```
+  xcrun security find-identity -v -p codesigning
+```
+
+It will return the following output, at least 1 cert should be installed
+
+```
+1 valid identities found
+```
+
+Add the following variables (you can retrive those values from the xcode BUNDLE_ID DEVICE_TARGET) 
+
+
+````
+export BUNDLE_ID=com.xxx.xxxxx.xxxxxxxx
+export DEVICE_ENDPOINT=IP_DEVICE
+export DEVICE_TARGET=Target_Device
+export CODE_SIGN_IDENTITY="iPhone Developer: your_Name (ID_XXXXX)" \
+````
+
+
+gem install bundler -v 1.16.1
+gem install calabash-cucumber  -v 0.21.8
+
+gem 'calabash-cucumber', '~> 0.21.8'
+
+calabash-ios console
+
+
+### Calabash commans 
+
+````
+tree
+````
+
+````
+query("view", :description)
+
+````
+
+# Additional features
+## Install Bash git completion 
+
+```
+https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion
+```
+
+## Ruby installation "rbenv" Method 
+#
 
 Install HombreBrew
 
@@ -78,67 +172,38 @@ Finally tell the system the version you want to use by default, replace the x wi
 ```
 rbenv global 2.6.2
 ```
+## Ant installation and configuration(Optional) 
+#
 
-## Ruby installation RVM method 
-
-Install `gpg2` and `curl`
-
-````
-brew install gpg2
-
-brew install curl 
-
-````
-
-Optional 
-
-````
-If you need to have curl first in your PATH run:
-  echo 'export PATH="/usr/local/opt/curl/bin:$PATH"' >> ~/.bash_profile
-
-For compilers to find curl you may need to set:
-  export LDFLAGS="-L/usr/local/opt/curl/lib"
-  export CPPFLAGS="-I/usr/local/opt/curl/include"
-`````
-
-
-Execute the following steps source (https://rvm.io/rvm/install)
-
-`````
-gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-
-`````
-
-Install RVM stable  
-
-`````
-\curl -sSL https://get.rvm.io | bash -s stable
-
-````
-
-
-
-
-##### Rails installation(optional) 
+Download from (https://ant.apache.org/)
 
 ```
-gem install rails -v 5.2.2
-```
-
-Run the following command 
+untar and place the ant folder wherever you want 
 
 ```
-rbenv rehash
-```
-Verify you version 
 
-```
-rails -v
-```
+## Environment setup
 
 
+Edit file bash_profile `/Users/user/.bash_profile`
+
+```
+vi /Users/user/.bash_profile
+
+```
+
+Add the following line in your `.bash_profile` file 
+
+```
+#### ANT_HOME #########
+
+export ANT_HOME=/Users/mkyong/apache-ant-1.9.4
+
+export PATH=${PATH}:${JAVA_HOME}/bin:${ANT_HOME}/bin
+```
 
 ## Calabash setup
+#
 
 Install the following package 
 
@@ -215,51 +280,3 @@ This will create a `StepFile.rb` inside step_definitions folder, so at this time
             └── env.rb
 
 ```
-
-
-## IOS setup 
-
-In order to automate with IOS you have to performe the following lines 
-
-Create a Ios.cert and install in your machine, verify whit the following command
-
-````
-  xcrun security find-identity -v -p codesigning
-````
-
-
-Add the following variables (you can retrive those values from the xcode BUNDLE_ID DEVICE_TARGET) 
-
-
-````
-export BUNDLE_ID=com.xxx.xxxxx.xxxxxxxx
-export DEVICE_ENDPOINT=IP_DEVICE
-export DEVICE_TARGET=Target_Device
-export CODE_SIGN_IDENTITY="iPhone Developer: your_Name (ID_XXXXX)" \
-````
-
-
-gem install bundler -v 1.16.1
-gem install calabash-cucumber  -v 0.21.8
-
-gem 'calabash-cucumber', '~> 0.21.8'
-
-calabash-ios console
-
-
-### Calabash commans 
-
-
-````
-tree
-````
-
-````
-query("view", :description)
-
-````
-
-# Install Bash git completion 
-https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion
-
-
