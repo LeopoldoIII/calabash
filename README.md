@@ -257,4 +257,53 @@ This will create a `StepFile.rb` inside step_definitions folder, so at this time
 
 xcrun instruments -s
 
+## Android Setup 
+
+## Apk instrumentation 
+In order to interact with the apk you perform the following actions
+
+#### Key store generation   
+
+Go to the following path `cd ~/.android/` run the following command and follow the instructions.
+
+```
+keytool -genkey -v -keystore debug.keystore -alias androiddebugkey -storepass android -keypass android -keyalg RSA -validity 14000
+```
+
+```
+calabash-android resign your_app_file_name.apk
+```
+
+```
+calabash-android build your_app_file_name.apk
+```
+
+```
+calabash-android console your_app_file_name.apk
+```
+
+inside of the irb run the following commands 
+
+```
+reinstall_apps
+```
+
+
+```
+start_test_server_in_background
+```
+
+
+#### Troubleshooting
+## 
+
+````
+RuntimeError: Failed to perform gesture. java.lang.SecurityException: Injecting to another application requires INJECT_EVENTS permission
+
+````
+Sometimes this error appears cuz there is another component just in front the component that you want to interact, most of the cases is the key board,
+to avoid this just execute `hide_soft_keyboard` before your action
+
+
+
 
