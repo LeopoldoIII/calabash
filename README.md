@@ -70,6 +70,38 @@ Bundler installation, (Bundler is an exit from dependency hell, and ensures that
 gem install bundler
 ```
 
+## Android setup
+#
+
+In order to automate with Android you have to performe the following steps 
+
+Download android from (https://developer.android.com/studio/) and install it, at the end follow the instructions to complete the SDK installation acording with android test that you want to interact
+Its takes several minutes to complete the installation, so be patient 
+
+Add the following lines in your .bash_profile file
+
+```
+#### ANDROID_HOME #########
+
+export ANDROID_HOME=/Library/Android/sdk
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$ANDROID_HOME/tools:$PATH
+```
+
+## Java setup
+#
+
+Java installation 
+
+Download and install a java version higher or equal to `1.8 `
+
+```
+##### JAVA_HOME ########
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home
+export PATH=${PATH}:${JAVA_HOME}/bin
+```
+
+
 ## IOS setup 
 #
 
@@ -304,6 +336,26 @@ RuntimeError: Failed to perform gesture. java.lang.SecurityException: Injecting 
 Sometimes this error appears cuz there is another component just in front the component that you want to interact, most of the cases is the key board,
 to avoid this just execute `hide_soft_keyboard` before your action
 
+````
+Error: The following directories are not writable by your user:
+/usr/local/share/man/man3
+/usr/local/share/man/man5
+/usr/local/share/man/man7
 
+You should change the ownership of these directories to your user.
+  sudo chown -R $(whoami) /usr/local/share/man/man3 /usr/local/share/man/man5 /usr/local/share/man/man7
 
+And make sure that your user has write permission.
+  chmod u+w /usr/local/share/man/man3 /usr/local/share/man/man5 /usr/local/share/man/man7
 
+````
+
+Error that comes from brew, directories are not writable by the current user
+
+````
+echo 'export PATH="/usr/local/opt/gettext/bin:$PATH"' >> ~/.bash_profile
+````
+to build documetation
+````
+Ruby was built without documentation, to build it run: rvm docs generate-ri
+````
