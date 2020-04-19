@@ -359,3 +359,19 @@ to build documetation
 ````
 Ruby was built without documentation, to build it run: rvm docs generate-ri
 ````
+
+#### Linux environment Setup 
+The following steps was performend in a debian base linux
+
+Git installation
+
+````
+sudo apt install git-all
+````
+
+RVM installation, folow step by step 
+
+https://rvm.io/rvm/install
+
+
+
