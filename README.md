@@ -374,4 +374,34 @@ RVM installation, folow step by step
 https://rvm.io/rvm/install
 
 
+###Java Installation and configuration
 
+Download Java from the followin url (https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+
+````
+tar -xzf jdk-8u201-linux-x64.tar.gz
+````
+Create a folder under `/opt/java/` and move the untar file `mv /opt/java/jdk1.8.0_201/bin/java`
+
+Set the JAVA HOME path
+
+Edit file bashrc under user path /home/userxxx/.bashrc
+
+````
+gedit /home/userxxx/.bashrc
+vim /home/userxxx/.bashrc
+````
+Add the following lines in your `.bashrc` file
+
+````
+export JAVA_HOME=/opt/java/jdk1.8.0_201/          
+export PATH=${PATH}:${JAVA_HOME}/bin
+````
+
+run following command to verify the path
+
+````
+echo $JAVA_HOME
+echo $PATH
+which java
+````
