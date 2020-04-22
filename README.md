@@ -361,7 +361,7 @@ Ruby was built without documentation, to build it run: rvm docs generate-ri
 ````
 
 #### Linux environment Setup 
-The following steps was performend in a debian base linux
+The following steps was performend in a debian/kali/ubuntu 
 
 Git installation
 
@@ -379,9 +379,9 @@ https://rvm.io/rvm/install
 Download Java from the followin url (https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
 ````
-tar -xzf jdk-8u201-linux-x64.tar.gz
+tar -xzf jdk-8u251-linux-x64.tar.gz
 ````
-Create a folder under `/opt/java/` and move the untar file `mv /opt/java/jdk1.8.0_201/bin/java`
+Create a folder under `/opt/java/` and move the untar file `mv /opt/java/jdk1.8.0_251/bin/java`
 
 Set the JAVA HOME path
 
@@ -394,13 +394,14 @@ vim /home/userxxx/.bashrc
 Add the following lines in your `.bashrc` file
 
 ````
-export JAVA_HOME=/opt/java/jdk1.8.0_201/          
+export JAVA_HOME=/opt/java/jdk1.8.0_251/          
 export PATH=${PATH}:${JAVA_HOME}/bin
 ````
 
 run following command to verify the path
 
 ````
+source .bashrc
 echo $JAVA_HOME
 echo $PATH
 which java
