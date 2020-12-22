@@ -1,7 +1,7 @@
 # Calabash environment Setup   
 
 
-
+# iOS 
 ## Ruby installation RVM method 
 #
 
@@ -406,3 +406,7 @@ echo $JAVA_HOME
 echo $PATH
 which java
 ````
+# Ubuntu 
+- Android studio 
+- rvm https://github.com/rvm/ubuntu_rvm > just following step by step till install your ruby version 
+https://stackoverflow.com/questions/26242712/installing-rvm-getting-error-there-was-an-error23/26370637
